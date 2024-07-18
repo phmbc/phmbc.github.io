@@ -8,23 +8,28 @@
 <body>
     <p id="info">1002-636-47208<br>우리은행<br>최영화</p>
     <button onclick="copyToClipboard()">클립보드에 복사</button>
+    <p>정보를 클립보드에 복사한 후 아래 버튼을 클릭하세요:</p>
+    <button onclick="redirectToKakaopay()">카카오페이로 이동</button>
+
     <script>
         function copyToClipboard() {
-            var range = document.createRange();
-            range.selectNode(document.getElementById("info"));
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(range);
+            var text = document.getElementById("info").innerText;
+            var textarea = document.createElement("textarea");
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
             try {
                 var successful = document.execCommand('copy');
                 var msg = successful ? '클립보드에 복사되었습니다.' : '클립보드 복사에 실패했습니다.';
                 alert(msg);
-                if (successful) {
-                    window.location.href = "https://link.kakaopay.com/t/money/send?t_src=homepage&t_ch=money_transfer";
-                }
             } catch (err) {
                 alert('클립보드 복사 중 오류가 발생했습니다.');
             }
-            window.getSelection().removeAllRanges();
+            document.body.removeChild(textarea);
+        }
+
+        function redirectToKakaopay() {
+            window.location.href = "https://link.kakaopay.com/t/money/send?t_src=homepage&t_ch=money_transfer";
         }
     </script>
 </body>
