@@ -7,12 +7,20 @@
     <style>
         #info {
             user-select: all;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
         }
     </style>
 </head>
 <body>
-    <p>아래 정보를 복사한 후 버튼을 눌러 카카오페이로 이동하세요:</p>
-    <p id="info">1002-636-47208<br>우리은행<br>최영화</p>
+    <p>아래 정보를 길게 눌러 복사한 후 버튼을 눌러 카카오페이로 이동하세요:</p>
+    <div id="info">1002-636-47208<br>우리은행<br>최영화</div>
     <button onclick="redirectToKakaopay()">카카오페이로 이동</button>
 
     <script>
