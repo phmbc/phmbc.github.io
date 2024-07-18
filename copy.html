@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Info</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+            background-color: #f0f0f0; /* 배경색 추가 */
+            margin: 20px; /* 여백 추가 */
+        }
+        #info {
+            user-select: all;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            background-color: #fff;
+        }
+        .button-container {
+            display: flex;
+            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+            justify-content: flex-end;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: rgb(119, 66, 204); /* 버튼 색상 변경 */
+            color: white; /* 텍스트 색상 흰색 */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+        }
+        button:hover {
+            background-color: rgb(100, 50, 170); /* 호버 시 약간 더 어두운 색상 */
+        }
+        p {
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p>아래 정보를 길게 눌러 복사하세요:</p>
+    <div id="info">1002-636-47208<br>우리은행<br>최영화<br></div>
+</body>
+</html>
