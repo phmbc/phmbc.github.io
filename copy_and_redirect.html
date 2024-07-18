@@ -4,22 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Copy Info</title>
+</head>
+<body>
+    <p id="info">1002-636-47208<br>우리은행<br>최영화</p>
+    <button onclick="copyToClipboard()">클립보드에 복사</button>
     <script>
         function copyToClipboard() {
-            var text = "1002-636-47208\n우리은행\n최영화";
-            navigator.clipboard.writeText(text).then(function() {
-                alert('정보가 클립보드에 복사되었습니다.');
-                setTimeout(function() {
+            var range = document.createRange();
+            range.selectNode(document.getElementById("info"));
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? '클립보드에 복사되었습니다.' : '클립보드 복사에 실패했습니다.';
+                alert(msg);
+                if (successful) {
                     window.location.href = "https://link.kakaopay.com/t/money/send?t_src=homepage&t_ch=money_transfer";
-                }, 1000); // 1초 지연 후 URL로 이동
-            }, function(err) {
-                console.error('클립보드 복사 실패: ', err);
-                alert('클립보드 복사에 실패했습니다.');
-            });
+                }
+            } catch (err) {
+                alert('클립보드 복사 중 오류가 발생했습니다.');
+            }
+            window.getSelection().removeAllRanges();
         }
     </script>
-</head>
-<body onload="copyToClipboard()">
-    <p>정보가 클립보드에 복사되었습니다. 이제 카카오페이로 이동합니다.</p>
 </body>
 </html>
