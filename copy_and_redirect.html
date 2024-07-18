@@ -9,7 +9,9 @@
             var text = "1002-636-47208\n우리은행\n최영화";
             navigator.clipboard.writeText(text).then(function() {
                 alert('정보가 클립보드에 복사되었습니다.');
-                window.location.href = "https://link.kakaopay.com/t/money/send?t_src=homepage&t_ch=money_transfer";
+                setTimeout(function() {
+                    window.location.href = "https://link.kakaopay.com/t/money/send?t_src=homepage&t_ch=money_transfer";
+                }, 1000); // 1초 지연 후 URL로 이동
             }, function(err) {
                 console.error('클립보드 복사 실패: ', err);
                 alert('클립보드 복사에 실패했습니다.');
