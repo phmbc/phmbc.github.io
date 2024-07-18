@@ -20,10 +20,24 @@
 </head>
 <body>
     <p>아래 정보를 길게 눌러 복사한 후 버튼을 눌러 카카오페이로 이동하세요:</p>
-    <div id="info">1002-636-47208<br>우리은행<br>최영화</div>
+    <div id="info" onclick="selectText(this)">1002-636-47208<br>우리은행<br>최영화</div>
     <button onclick="redirectToKakaopay()">카카오페이로 이동</button>
 
     <script>
+        function selectText(element) {
+            if (document.body.createTextRange) {
+                var range = document.body.createTextRange();
+                range.moveToElementText(element);
+                range.select();
+            } else if (window.getSelection) {
+                var selection = window.getSelection();        
+                var range = document.createRange();
+                range.selectNodeContents(element);
+                selection.removeAllRanges();
+                selection.addRange(range);
+            }
+        }
+
         function redirectToKakaopay() {
             window.location.href = "https://link.kakaopay.com/t/money/send?t_src=homepage&t_ch=money_transfer";
         }
