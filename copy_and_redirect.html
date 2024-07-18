@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Copy Info</title>
     <style>
         body {
-            font-family: '맑은 고딕', sans-serif;
+            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
         }
         #info {
             user-select: all;
@@ -16,6 +16,10 @@
             font-size: 1.2em;
             background-color: #f9f9f9;
         }
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+        }
         button {
             padding: 10px 20px;
             font-size: 1em;
@@ -24,7 +28,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-family: '맑은 고딕', sans-serif;
+            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
         }
         button:hover {
             background-color: rgb(100, 50, 170); /* 호버 시 약간 더 어두운 색상 */
@@ -38,7 +42,9 @@
 <body>
     <p>아래 정보를 길게 눌러 복사한 후, "카카오페이로 이동" 버튼을 눌러주세요:</p>
     <div id="info">1002-636-47208<br>우리은행<br>최영화</div>
-    <button onclick="redirectToKakaopay()">카카오페이로 이동</button>
+    <div class="button-container">
+        <button onclick="redirectToKakaopay()">카카오페이로 이동</button>
+    </div>
 
     <script>
         function redirectToKakaopay() {
