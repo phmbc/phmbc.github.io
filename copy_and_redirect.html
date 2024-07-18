@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Info</title>
+    <script>
+        function copyToClipboard() {
+            var text = "1002-636-47208\n우리은행\n최영화";
+            navigator.clipboard.writeText(text).then(function() {
+                alert('정보가 클립보드에 복사되었습니다.');
+            }, function(err) {
+                console.error('클립보드 복사 실패: ', err);
+            });
+        }
+    </script>
+</head>
+<body onload="copyToClipboard()">
+    <p>정보가 클립보드에 복사되었습니다. 이제 카카오페이로 이동합니다.</p>
+    <script>
+        setTimeout(function() {
+            window.location.href = "https://link.kakaopay.com/t/money/send?t_src=homepage&t_ch=money_transfer";
+        }, 2000);
+    </script>
+</body>
+</html>
