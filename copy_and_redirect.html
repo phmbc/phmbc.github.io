@@ -15,7 +15,7 @@
             padding: 10px;
             border: 1px solid #ccc;
             margin-bottom: 20px;
-            font-size: 1.2em;
+            font-size: 1.5em;
             background-color: #fff;
         }
         .button-container {
@@ -25,7 +25,7 @@
         }
         button {
             padding: 10px 20px;
-            font-size: 1em;
+            font-size: 1.2em;
             background-color: rgb(119, 66, 204); /* 버튼 색상 변경 */
             color: white; /* 텍스트 색상 흰색 */
             border: none;
@@ -37,14 +37,20 @@
             background-color: rgb(100, 50, 170); /* 호버 시 약간 더 어두운 색상 */
         }
         p {
-            font-size: 1em;
+            font-size: 1.2em;
             margin-bottom: 20px;
+        }
+        .bold-large {
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <p>아래 정보를 길게 눌러 복사한 후, "카카오페이로 이동" 버튼을 눌러주세요:</p>
+    <p class="bold-large">1) 복사</p>
     <div id="info">1002-636-47208<br>우리은행<br>최영화<br></div>
+    <p class="bold-large">2) 접속</p>
     <div class="button-container">
         <button onclick="redirectToKakaopay()">카카오페이로 이동</button>
     </div>
